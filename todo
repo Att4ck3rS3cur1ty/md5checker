@@ -1,2 +1,3 @@
 1 - use a better validation for md5 hash
 2 - based on the OS, generate md5sum
+3 - pass the hash algorithm as an argument (support others beyond md5) 
