@@ -1,6 +1,6 @@
 #!/bin/bash
 
-[ "$#" -ne 2 ] && echo "Illegal parameters! USAGE: $0 <FILE> <HASH>" && exit
+[ "$#" -ne 2 ] && echo "Illegal parameters! USAGE: $0 <FILE> <HASH>" && exit 2
 
 
 if [ -z "$1" -o  -z "$2" ]
