@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if [ -z "$1" ]
+if [ -z "$1" -o  -z "$2" ]
 then
-	echo "File argument cannot be 0"
+	echo "File argument cannot be < 2"
 	echo "Exiting..."
 	exit 0
 fi
