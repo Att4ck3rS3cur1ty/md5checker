@@ -1,6 +1,7 @@
 #!/bin/bash
 
-[ "$#" -ne 2 ] && echo "Illegal parameters! USAGE: $0 <FILE> <HASH>" && exit 2
+# checks if the number of arguments is valid
+[ "$#" -ne 2 ] && echo "Illegal number of arguments! USAGE: $0 <FILE> <HASH>" && exit 2
 
 file_or_directory="$1"
 
