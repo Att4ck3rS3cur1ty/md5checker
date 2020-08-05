@@ -2,9 +2,23 @@
 
 [ "$#" -ne 2 ] && echo "Illegal parameters! USAGE: $0 <FILE> <HASH>" && exit 2
 
-md5sum $1 
+file_or_directory="$1"
+
+# if file exists
+if [ -f "${file_or_directory}"  ]; then
+	echo "[SUCCESS] file found!" 
+
+elif [ -d "${file_or_directory}" ]; then
+	echo "${file_or_directory} is a directory. Exiting..."
+	exit 2
+else
+	echo "[FAIL] file not found! Exiting..." 
+	exit 2
+fi
+
+# if the md5sum script ran properly
 if [ $? -eq 0 ]; then
-	file_hash=$(md5sum $1 | cut -d ' ' -f 1   )	
+	file_hash=$(md5sum $file_or_directory | cut -d ' ' -f 1   )	
 else 
 	exit 0
 fi 
@@ -27,7 +41,7 @@ echo
 if [ $file_hash == $arg_hash ] 
 then
 	echo
-	echo "Yup! $1 = $2"
+	echo "Yup! $file_or_directory = $2"
 	echo "... done. "
       	echo
 else 
