@@ -10,7 +10,7 @@ fail_msg="[FAIL]"
 file_or_directory="$1"
 
 # if file exists
-if [ -f "${file_or_directory}"  ]; then
+if [ -f "${file_or_directory}" ]; then
 	echo "[SUCCESS] file found!" 
 
 elif [ -d "${file_or_directory}" ]; then
